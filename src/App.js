@@ -1,24 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import { Gallery } from './components/gallery';
+import { Container } from 'react-bootstrap';
+import uniqid from 'uniqid';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Rick and Morty characters</h1>
+      <Container key={uniqid()} fluid={true}>
+        <Gallery key={uniqid()}></Gallery>
+      </Container>
+    </>
   );
 }
 
